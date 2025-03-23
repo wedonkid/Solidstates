@@ -4,131 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akk Sir's Solid State Lectures</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2c3e50, #000000);
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #000000, #2c3e50, #8e44ad); /* Black-Grey-Purple Gradient */
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        animation: gradientAnimation 10s ease infinite;
+    }
 
-        .container {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 255, 150, 0.3);
-            max-width: 400px;
-            width: 90%;
-            margin-bottom: 20px;
-        }
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-            color: #00FFA3;  /* Cyan-Green Highlight */
-            text-shadow: 0 0 20px #00FFA3;
-        }
+    .container {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(142, 68, 173, 0.4); /* Purple Shadow */
+        max-width: 400px;
+        width: 90%;
+        margin-bottom: 20px;
+        backdrop-filter: blur(10px); /* Blur Effect */
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #1ABC9C; /* Softer Green for Subheading */
-        }
+    h1 {
+        font-size: 2.8rem;
+        margin-bottom: 5px;
+        color: #8e44ad; /* Purple Highlight */
+        text-shadow: 0 0 20px #8e44ad;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
 
-        h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            color: #f39c12; 
-        }
+    @keyframes glow {
+        0% { text-shadow: 0 0 10px #8e44ad; }
+        100% { text-shadow: 0 0 30px #8e44ad; }
+    }
 
-        .lecture-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        color: #9b59b6; /* Softer Purple for Subheading */
+    }
 
-        .lecture-list li {
-            margin: 12px 0;
-        }
+    h3 {
+        font-size: 1.5rem;
+        margin-top: 0;
+        color: #bdc3c7; /* Light Grey */
+    }
 
-        .lecture-list a {
-            text-decoration: none;
-        }
+    .lecture-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .lecture-button {
-            display: inline-block;
-            padding: 12px 40px;
-            background: linear-gradient(135deg, #8e44ad, #00FFFF);
-            color: #ffffff;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
-        }
+    .lecture-list li {
+        margin: 12px 0;
+    }
 
-        .lecture-button:hover {
-            background: linear-gradient(135deg, #9b59b6, #1abc9c);
-            transform: scale(1.08);
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
-        }
+    .lecture-list a {
+        text-decoration: none;
+    }
 
-        .footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #cccccc;
-            margin-top: 20px;
-        }
+    .lecture-button {
+        display: inline-block;
+        padding: 12px 40px;
+        background: linear-gradient(135deg, #2c3e50, #8e44ad); /* Grey-Purple Gradient */
+        color: #ffffff;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4); /* Purple Shadow */
+    }
 
-        .footer span {
-            color: #00FFA3;
-        }
+    .lecture-button:hover {
+        background: linear-gradient(135deg, #34495e, #9b59b6); /* Darker Grey-Purple Gradient */
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(142, 68, 173, 0.7); /* Brighter Purple Shadow */
+    }
 
-        .social-link {
-            color: #00FFA3;
-            text-decoration: none;
-            margin: 0 5px;
-            transition: color 0.3s ease;
-        }
+    .footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #bdc3c7; /* Light Grey */
+        margin-top: 20px;
+    }
 
-        .social-link:hover {
-            color: #1ABC9C;
-        }
+    .footer span {
+        color: #000000; /* Purple Highlight */
+    }
 
-        .social-link img {
-            vertical-align: middle;
-            margin-right: 5px;
-        }
+    .social-link {
+        color: #000000; /* Purple Highlight */
+        text-decoration: none;
+        margin: 0 5px;
+        transition: color 0.3s ease;
+    }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #8e44ad, #00FFFF);
-            color: #ffffff;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
-            display: none;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
+    .social-link:hover {
+        color: #000000; /* Softer Purple */
+    }
 
-        .back-to-top:hover {
-            background: linear-gradient(135deg, #9b59b6, #1abc9c);
-            transform: scale(1.1);
-        }
-    </style>
+    .social-link img {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #2c3e50, #8e44ad); /* Grey-Purple Gradient */
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4); /* Purple Shadow */
+        display: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-to-top:hover {
+        background: linear-gradient(135deg, #34495e, #9b59b6); /* Darker Grey-Purple Gradient */
+        transform: scale(1.1);
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -147,6 +161,7 @@
 <li><a href="https://lksfy.com/VPJbjcL6" target="_blank"><button class="lecture-button">Lecture 8</button></a></li>
 <li><a href="https://lksfy.com/ETRjCEt" target="_blank"><button class="lecture-button">Lecture 9</button></a></li>
 <li><a href="https://lksfy.com/c8tRdPCBM" target="_blank"><button class="lecture-button">Lecture 10</button></a></li>
+        <li><a href="https://youtu.be/Tba8arFqBFw?si=q01kKfamn4rKW_er" target="_blank"><button class="lecture-button">How To Process Links</button></a></li>
         </ul>
     </div>
 
